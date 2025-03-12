@@ -4,12 +4,12 @@ import { FaGithub, FaTwitter, FaLink } from "react-icons/fa";
 import Image from "next/image";
 
 interface GithubProfile {
-  avatar_url: string;
-  name: string;
-  login: string;
-  bio: string;
-  location: string;
-  company: string;
+  avatar_url?: string;
+  name?: string;
+  login?: string;
+  bio?: string;
+  location?: string;
+  company?: string;
   html_url: string;
   blog?: string;
   twitter_username?: string;
@@ -24,30 +24,55 @@ const GithubProfile = ({ profile }: { profile?: GithubProfile }) => {
   }
 
   return (
-    <div className="max-w-md mx-auto bg-white shadow-md rounded-lg p-6 text-center">
-      <Image
-        src={profile.avatar_url}
-        alt={profile.name}
-        width={96}
-        height={96}
-        className="w-24 h-24 mx-auto rounded-full shadow-md"
-      />
-      <h2 className="text-xl font-semibold mt-3">{profile.name}</h2>
-      <p className="text-gray-500">@{profile.login}</p>
-      <p className="text-sm text-gray-600 mt-2">{profile.bio}</p>
+    <div className="bg-gradient-to-br from-white to-gray-100 shadow-lg rounded-2xl p-4 sm:p-6 md:p-8 border border-gray-200 hover:shadow-2xl xl:mt-20 transition duration-300">
+      {profile.avatar_url ? (
+        <Image
+          src={profile.avatar_url}
+          alt={profile.name || "Unknown"}
+          width={150}
+          height={150}
+          className="w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36 mx-auto rounded-full shadow-xl border-4 border-white hover:scale-105 transition-transform duration-300"
+        />
+      ) : (
+        <div className="w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36 mx-auto rounded-full bg-gray-300 flex items-center justify-center text-gray-500">
+          No Image
+        </div>
+      )}
 
-      <div className="mt-4 flex justify-center space-x-4 text-gray-700">
-        <p>📍 {profile.location}</p>
-        <p>🏢 {profile.company}</p>
+      <h2 className="text-xl sm:text-2xl font-bold mt-4 text-blue-600 text-center">{profile.name || "Unknown"}</h2>
+      <p className="text-gray-600 font-medium text-center">@{profile.login || "No username"}</p>
+      <p className="text-gray-700 mt-3 italic text-center">{profile.bio || "No bio available."}</p>
+
+      <div className="mt-4 sm:mt-6 flex flex-col sm:flex-row justify-center gap-2 sm:gap-4 text-gray-700 font-medium text-center">
+        {profile.location && (
+          <p className="flex items-center gap-1 sm:gap-2">
+            <span className="text-lg sm:text-xl">📍</span> {profile.location}
+          </p>
+        )}
+        {profile.company && (
+          <p className="flex items-center gap-1 sm:gap-2">
+            <span className="text-lg sm:text-xl">🏢</span> {profile.company}
+          </p>
+        )}
       </div>
 
-      <div className="mt-4 flex justify-center space-x-6">
-        <a href={profile.html_url} target="_blank" rel="noopener noreferrer" className="text-black">
-          <FaGithub size={24} />
+      <div className="mt-4 sm:mt-6 flex justify-center space-x-4 sm:space-x-6">
+        <a 
+          href={profile.html_url} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="text-gray-800 hover:text-black hover:scale-110 transition-all"
+        >
+          <FaGithub className="w-6 sm:w-7 h-6 sm:h-7" />
         </a>
         {profile.blog && (
-          <a href={profile.blog} target="_blank" rel="noopener noreferrer" className="text-blue-500">
-            <FaLink size={24} />
+          <a 
+            href={profile.blog} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="text-blue-500 hover:text-blue-600 hover:scale-110 transition-all"
+          >
+            <FaLink className="w-6 sm:w-7 h-6 sm:h-7" />
           </a>
         )}
         {profile.twitter_username && (
@@ -55,25 +80,25 @@ const GithubProfile = ({ profile }: { profile?: GithubProfile }) => {
             href={`https://twitter.com/${profile.twitter_username}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-blue-400"
+            className="text-blue-400 hover:text-blue-500 hover:scale-110 transition-all"
           >
-            <FaTwitter size={24} />
+            <FaTwitter className="w-6 sm:w-7 h-6 sm:h-7" />
           </a>
         )}
       </div>
 
-      <div className="mt-4 flex justify-around text-gray-700">
-        <div>
-          <p className="text-lg font-semibold">{profile.public_repos}</p>
-          <p className="text-sm">Repositories</p>
+      <div className="mt-6 sm:mt-8 grid grid-cols-3 gap-2 sm:gap-4 text-center">
+        <div className="bg-white p-2 sm:p-3 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+          <p className="text-lg sm:text-xl font-bold text-blue-600">{profile.public_repos}</p>
+          <p className="text-xs sm:text-sm font-medium text-gray-600">Repositories</p>
         </div>
-        <div>
-          <p className="text-lg font-semibold">{profile.followers}</p>
-          <p className="text-sm">Followers</p>
+        <div className="bg-white p-2 sm:p-3 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+          <p className="text-lg sm:text-xl font-bold text-green-600">{profile.followers}</p>
+          <p className="text-xs sm:text-sm font-medium text-gray-600">Followers</p>
         </div>
-        <div>
-          <p className="text-lg font-semibold">{profile.following}</p>
-          <p className="text-sm">Following</p>
+        <div className="bg-white p-2 sm:p-3 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+          <p className="text-lg sm:text-xl font-bold text-purple-600">{profile.following}</p>
+          <p className="text-xs sm:text-sm font-medium text-gray-600">Following</p>
         </div>
       </div>
     </div>

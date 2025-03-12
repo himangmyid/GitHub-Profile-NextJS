@@ -1,7 +1,11 @@
 import { fetchRepoDetail } from "@/utils/github";
 
-export default async function RepoDetail({ params }: { params: { id: string } }) {
-  const repo = await fetchRepoDetail("himangmyid", params.id); // Ambil data langsung di sini
+interface RepoDetailProps {
+  params: { id: string };
+}
+
+export default async function RepoDetail({ params }: RepoDetailProps) {
+  const repo = await fetchRepoDetail("himangmyid", params.id);
 
   return (
     <div className="container mx-auto p-6">

@@ -42,10 +42,10 @@ export default function RepoList() {
 
   return (
     <div className="container mx-auto p-6">
-      <h1 className="text-3xl font-bold mb-4">GitHub Repositories</h1>
+      <h2 className="text-center text-3xl font-bold mb-4">GitHub Repo</h2>
 
      {/* Dropdown Filter */}
-<div className="mb-4 flex justify-end">
+<div className="mb-3 flex justify-end">
   <label className="mr-2 text-center font-medium">Urutkan:</label>
   <select
     className="border p-1 rounded-full"

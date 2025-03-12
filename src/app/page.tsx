@@ -16,12 +16,12 @@ export default function Home() {
   return (
     <div> {/* 🔥 Bungkus semua dalam satu div */}
       <div className="p-2">
-        <h1 className="text-2xl font-bold text-center">GitHub Profile Viewer</h1>
+        <h1 className="mt-2 text-2xl font-bold text-center">GitHub Profile Viewer</h1>
       </div>
 
       <div className="p-10">
         <div className="flex flex-col md:flex-row gap-6 mt-6">
-          <div className="md:w-1/3">
+          <div className="mt-10 md:w-1/3">
             {profile ? <GithubProfile profile={profile} /> : <p>Loading...</p>}
           </div>
           <main className="md:w-2/3">
