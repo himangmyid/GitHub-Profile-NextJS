@@ -7,15 +7,16 @@ export default async function RepoDetail({
   params: { id: string };
 }) {
   try {
+    const { id } = await params; // Menunggu resolusi Promise params
     const repos = await fetchRepos("himangmyid");
-    const repo = repos.find((r) => r.id.toString() === params.id);
+    const repo = repos.find((r) => r.id.toString() === id);
 
     if (!repo) {
       throw new Error("Repositori tidak ditemukan");
     }
 
     const languages = await fetchRepoLanguages("himangmyid", repo.name);
-    const primaryLanguage = Object.keys(languages)[0] || "Tidak diketahui";
+    const primaryLanguage = Object.keys(languages)[0] || "unknown";
 
     return (
       <div className="container mx-auto p-6">
@@ -23,7 +24,12 @@ export default async function RepoDetail({
         <p className="text-gray-600">{repo.description}</p>
         <p>⭐ Stars: {repo.stargazers_count} | 🍴 Forks: {repo.forks_count}</p>
         <p>📌 Language: {primaryLanguage}</p>
-        <a href={repo.html_url} target="_blank" rel="noopener noreferrer" className="text-blue-500">
+        <a
+          href={repo.html_url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-500"
+        >
           View on GitHub
         </a>
       </div>
