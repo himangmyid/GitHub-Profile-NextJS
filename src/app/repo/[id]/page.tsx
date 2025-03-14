@@ -4,7 +4,7 @@ import { fetchRepoLanguages } from "@/utils/languages";
 export default async function RepoDetail({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
   try {
     const { id } = await params; // Menunggu resolusi Promise params
@@ -16,7 +16,7 @@ export default async function RepoDetail({
     }
 
     const languages = await fetchRepoLanguages("himangmyid", repo.name);
-    const primaryLanguage = Object.keys(languages)[0] || "unknown";
+    const primaryLanguage = Object.keys(languages)[0] || "Tidak diketahui";
 
     return (
       <div className="container mx-auto p-6">
