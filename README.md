@@ -4,10 +4,31 @@ This project is a **GitHub Profile Himang** built with **Next.js 15** and **Tail
 
 <p align="center">
   <a href="https://github.com/himangmyid/GitHub-Profile-NextJS">
-    <img src="https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api/pin/?username=himangmyid&repo=GitHub-Profile-NextJS&theme=tokyonight" alt="GitHub Repo Card">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=himangmyid&repo=GitHub-Profile-NextJS&theme=tokyonight" alt="GitHub Repo Card">
   </a>
 </p>
 
+
+
+<hr/>
+<div align="center">
+<h1 align="center">💸 Support me💰</h1>
+<table align="center">
+  <tr>
+     <td align="center">
+      <a href="https://paypal.me/DogGhozt" target="_blank">
+        <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/paypal/default.svg" width="52" height="40" alt="paypal logo" />
+      </a>
+    </td>
+    <td align="center">
+  <a href="https://trakteer.id/himang/tip" target="_blank">
+    <img src="https://img.icons8.com/?size=100&id=13013&format=png&color=000000" width="52" height="40" alt="buy me a coffee" />
+  </a>
+</td>
+  </tr>
+</table>
+</div>
+<hr/>
 
 ## Features
 
@@ -128,25 +149,7 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-<hr/>
-<div align="center">
-<h1 align="center">💸 Support me💰</h1>
-<table align="center">
-  <tr>
-     <td align="center">
-      <a href="https://paypal.me/DogGhozt" target="_blank">
-        <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/paypal/default.svg" width="52" height="40" alt="paypal logo" />
-      </a>
-    </td>
-    <td align="center">
-  <a href="https://trakteer.id/himang/tip" target="_blank">
-    <img src="https://img.icons8.com/?size=100&id=13013&format=png&color=000000" width="52" height="40" alt="buy me a coffee" />
-  </a>
-</td>
-  </tr>
-</table>
-</div>
-<hr/>
+
 
 ## Learn More
 
