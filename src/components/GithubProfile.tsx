@@ -43,7 +43,7 @@ const GithubProfile = ({ profile }: { profile?: GithubProfile }) => {
       <p className="text-gray-600 font-medium text-center">@{profile.login || "No username"}</p>
       <p className="text-gray-700 mt-3 italic text-center">{profile.bio || "No bio available."}</p>
 
-      <div className="mt-4 sm:mt-6 flex flex-col sm:flex-row justify-center gap-2 sm:gap-4 text-gray-700 font-medium text-center">
+      <div className="mt-4 sm:mt-6 flex  sm:flex-row justify-center gap-2 sm:gap-4 text-gray-700 font-medium text-center">
         {profile.location && (
           <p className="flex items-center gap-1 sm:gap-2">
             <span className="text-lg sm:text-xl">📍</span> {profile.location}

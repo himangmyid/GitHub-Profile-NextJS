@@ -14,9 +14,9 @@ export default function Home() {
   }, []);
 
   return (
-    <div> {/* 🔥 Bungkus semua dalam satu div */}
+    <div>
       <div className="p-2">
-        <h1 className="mt-2 text-2xl font-bold text-center">GitHub Profile Viewer</h1>
+        <h1 className="mt-2 text-2xl font-bold text-center">GitHub Profile Himangmyid</h1>
       </div>
 
       <div className="p-10">

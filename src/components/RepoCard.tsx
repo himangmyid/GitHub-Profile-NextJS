@@ -1,4 +1,3 @@
-"use client";
 import { Star, GitFork, Globe, FileCode2, Calendar, HardDriveDownload, ScrollText } from "lucide-react";
 
 interface Repo {
@@ -26,7 +25,7 @@ export default function RepoCard({ repo }: { repo: Repo }) {
       <div className="grid grid-cols-2 gap-4 text-gray-700 text-sm">
         <p className="flex items-center gap-1"><Star className="w-4 h-4 text-yellow-500" /> {repo.stargazers_count} Stars</p>
         <p className="flex items-center gap-1"><GitFork className="w-4 h-4 text-green-500" /> {repo.forks_count} Forks</p>
-        <p className="flex items-center gap-1"><FileCode2 className="w-4 h-4 text-indigo-500" /> {repo.language || "Unknown"}</p>
+        <p className="flex items-center gap-1"><FileCode2 className="w-4 h-4 text-indigo-500" /> {repo.language ? repo.language : "unknown"}</p>
         <p className="flex items-center gap-1"><HardDriveDownload className="w-4 h-4 text-gray-500" /> {repo.size} KB</p>
         <p className="flex items-center gap-1"><Calendar className="w-4 h-4 text-red-500" /> {new Date(repo.created_at).toLocaleDateString()}</p>
         <p className="flex items-center gap-1"><Globe className="w-4 h-4 text-blue-400" /> {new Date(repo.updated_at).toLocaleDateString()}</p>
